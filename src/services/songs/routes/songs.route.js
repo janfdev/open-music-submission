@@ -14,10 +14,10 @@ import {
 
 const router = express.Router();
 
-router.get("/", getAllSong);
-router.get("/:id", getSongById);
-router.post("/", validateSongPayload, createSong);
-router.put("/:id", validateSongUpdatePayload, editSongById);
-router.delete("/:id", deleteSongById);
+router.get("/songs", getAllSong);
+router.get("/songs/:id", getSongById);
+router.post("/songs", validateSongPayload, createSong);
+router.put("/songs/:id", validateSongUpdatePayload, editSongById);
+router.delete("/songs/:id", deleteSongById);
 
 export default router;

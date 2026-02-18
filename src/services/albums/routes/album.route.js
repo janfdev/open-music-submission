@@ -13,10 +13,10 @@ import {
 
 const router = express.Router();
 
-router.get("/", getAllAlbums);
-router.get("/:id", getAlbumById);
-router.post("/", validateAlbumPayload, createAlbum);
-router.put("/:id", validateAlbumUpdatePayload, editAlbumById);
-router.delete("/:id", deleteAlbumById);
+router.get("/albums", getAllAlbums);
+router.get("/albums/:id", getAlbumById);
+router.post("/albums", validateAlbumPayload, createAlbum);
+router.put("/albums/:id", validateAlbumUpdatePayload, editAlbumById);
+router.delete("/albums/:id", deleteAlbumById);
 
 export default router;
