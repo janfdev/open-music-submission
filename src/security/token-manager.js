@@ -21,7 +21,7 @@ const TokenManager = {
       return payload;
     } catch (error) {
       console.error(error);
-      throw new InvariantError("Refresh token tdiak valid");
+      throw new InvariantError("Refresh token tidak valid");
     }
   },
 };

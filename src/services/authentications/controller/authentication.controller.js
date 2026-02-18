@@ -47,7 +47,7 @@ export const Logout = async (req, res, next) => {
     await authenticationRepositories.verifyRefreshToken(refreshToken);
 
   if (!result) {
-    return next(new InvariantError("Refresh token tidak vaid"));
+    return next(new InvariantError("Refresh token tidak valid"));
   }
 
   await authenticationRepositories.deleteRefreshToken(refreshToken);
