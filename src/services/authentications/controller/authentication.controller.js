@@ -37,7 +37,9 @@ export const refreshToken = async (req, res, next) => {
   const { id } = TokenManager.verifyRefreshToken(refreshToken);
   const accessToken = TokenManager.generateAccessToken({ id });
 
-  return response(res, 200, "Access Token berhasil diperbarui", accessToken);
+  return response(res, 200, "Access Token berhasil diperbarui", {
+    accessToken,
+  });
 };
 
 export const Logout = async (req, res, next) => {
