@@ -27,8 +27,19 @@ class AlbumRepository {
 
   async getAlbumById(id) {
     const query = {
-      text: "SELECT * FROM albums WHERE id = $1",
+      text: "SELECT id, name, year, cover FROM albums WHERE id = $1",
       values: [id],
+    };
+
+    const result = await this.pool.query(query);
+
+    return result.rows[0];
+  }
+
+  async updateAlbumCover(id, coverUrl) {
+    const query = {
+      text: "UPDATE albums SET cover = $1 WHERE id = $2 RETURNING id",
+      values: [coverUrl, id],
     };
 
     const result = await this.pool.query(query);
